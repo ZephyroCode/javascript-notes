@@ -1,53 +1,61 @@
 # Clases
 
+## Índice
+
+* [Conceptos Básicos](#básicos)
+* [Herencia](#herencia)
+* [Operador Instanceof](#instanceof)
+
+---
+
 ## Básicos
 
 Las clases en JavaScript son básicamente _"moldes"_ o _"plantillas"_ desde las cuales crearemos objetos a partir de ellas, de modo que podemos tener muchos objetos con una serie de propiedades y/o métodos ya definidos gracias a la clase.
 
 ```js
 class Operador {
-	constructor(names, surnames, dni, gender, phone, mail) {
-		this._names = names;
-		this._surnames = surnames;
+	constructor(nombres, apellidos, dni, sexo, celular, correo) {
+		this._nombres = nombres;
+		this._apellidos = apellidos;
 		this._dni = dni;
-		this._gender = gender;
-		this._phone = phone;
-		this._mail = mail;
+		this._sexo = sexo;
+		this._celular = celular;
+		this._correo = correo;
 	}
 	// Static props/methods
-	static MAIN_CHARGE = "Operator";
+	static CARGO_PRINCIPAL = "Operador";
 
 	// Getters
-	get names() {
-		return this._names;
+	get nombres() {
+		return this._nombres;
 	}
-	get surnames() {
-		return this._surnames;
+	get apellidos() {
+		return this._apellidos;
 	}
 	get dni() {
 		return this._dni;
 	}
-	get gender() {
-		return this._gender;
+	get sexo() {
+		return this._sexo;
 	}
-	get phone() {
-		return this._phone;
+	get celular() {
+		return this._celular;
 	}
-	get mail() {
-		return this._mail;
+	get correo() {
+		return this._correo;
 	}
 
 	// Setters
-	set phone(newPhone) {
-		this._phone = newPhone;
+	set celular(nuevocelular) {
+		this._celular = nuevocelular;
 	}
-	set mail(newMail) {
-		this._mail = newMail;
+	set correo(nuevocorreo) {
+		this._correo = nuevocorreo;
 	}
 
-	// Methods
-	greet() {
-		return `Hello. I'm ${this.names} ${this.surnames}, DNI: ${this.dni}, gender ${this.gender}. My phone number is: ${this.phone}, my email is: ${this.mail} and my charge is ${Operator.MAIN_CHARGE}.`;
+	// Métodos
+	saludo() {
+		return `Hola. Soy ${this.nombres} ${this.apellidos}.`;
 	}
 }
 ```
@@ -63,13 +71,13 @@ Además, podemos ver que dentro de la clase tenemos una sección de `Getters` y 
 
 De igual forma, podemos tener propiedades y métodos estáticos dentro de nuestra clase. Estos no necesariamente son parte de los objetos creados a partir de nuestra clase, sino que son propiedades/métodos propios de la clase en sí. Como se puede ver en el ejemplo de arriba, los crearemos utilizando la palabra reservada `static`.
 
----
-
 Aquí un ejemplo de cómo podemos crear un nuevo objeto basado en una clase.
 
 ```js
-const elizabeth = new Operator("Elizabeth Alejandra", "Snow Blake", 1234567, "female", 123456789, "liz@mail.com");
+const elizabeth = new Operador("Elizabeth Alejandra", "Snow Blake", 1234567, "femenino", 123456789, "liz@correo.com");
 ```
+
+[Volver arriba](#índice)
 
 ---
 
@@ -77,22 +85,20 @@ const elizabeth = new Operator("Elizabeth Alejandra", "Snow Blake", 1234567, "fe
 
 También tenemos en JavaScrit la herencia. Dicho de forma simple, es cuando una clase hereda propiedades y métodos de otra.
 
-Tenemos la clase `Operator` como ejemplo. Esta clase tiene algunas propiedades y métodos que cada objeto basado en ella tendra, pero también puede haber algunas clases que hereden esas propiedades y métodos, además de tener los suyos. Para el caso de `Operator`, podemos ver que tiene algunos datos personales, y luego podemos tener algunas clases que hereden tales propiedades y añadan otras respecto a su cargo, deberes y responsabilidades.
+Tenemos la clase `Operador` como ejemplo. Esta clase tiene algunas propiedades y métodos que cada objeto basado en ella tendra, pero también puede haber algunas clases que hereden esas propiedades y métodos, además de tener los suyos. Para el caso de `Operador`, podemos ver que tiene algunos datos personales, y luego podemos tener algunas clases que hereden tales propiedades y añadan otras respecto a su cargo, deberes y responsabilidades.
 
 ```js
 class Supervisor extends Operador { }
 ```
 
-Este ejemplo muestra que la clase `Supervisor` hereda todas las propiedades de la clase `Operador`, por lo que si creamos un nuevo objeto basado en Supervisor, tendrá las mismas propiedades y métodos que un objeto de Operator tiene.
-
----
+Este ejemplo muestra que la clase `Supervisor` hereda todas las propiedades de la clase `Operador`, por lo que si creamos un nuevo objeto basado en Supervisor, tendrá las mismas propiedades y métodos que un objeto de Operador tiene.
 
 ```js
-class Manager extends Operador {
-	constructor(names, surnames, dni, gender, phone, mail) {
-		super(names, surnames, dni, gender, phone, mail);
+class Gerente extends Operador {
+	constructor(nombres, apellidos, dni, sexo, celular, correo) {
+		super(nombres, apellidos, dni, sexo, celular, correo);
 
-		this._responsibilities = [];
+		this._responsabilidades = [];
 	}
 }
 ```
@@ -103,13 +109,17 @@ Si intentamos copiar la clase padre usando `this`, tendremos un error que nos di
 
 También tenemos que considerar que cuando quieres agregar nuevas propiedades o métodos a una clase que hereda de otra, **debes** usar `super`.
 
+[Volver arriba](#índice)
+
 ---
 
-## Operador Instanceof
+## Instanceof
 
 Como una nota adicional, tenemos también el operador `instanceof`, el cual devuelve un booleano. Este operador es básicamente una pregunta sencilla: _"¿Este objeto es una instancia de esta clase?"_
 
 ```js
-console.log(elizabeth instanceof Operator);
+console.log(elizabeth instanceof Operador);
 // This returns true.
 ```
+
+[Volver arriba](#índice)

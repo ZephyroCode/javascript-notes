@@ -1,16 +1,23 @@
 # Excepciones / Errores
 
-## Basicos
+## Índice
+
+* [Conceptos Básicos](#básicos)
+* [Bloque Try-Catch](#try-catch)
+
+---
+
+## Básicos
 
 Las excepciones son casos de funcionamiento anormal en nuestro código que nos obligan a desviar el funcionamiento de nuestro programa a uno diferente, por lo que se les da un tratamiento especial a estos escenarios.
 
 Para declarar o lanzar una nueva excepción hacemos uso de la palabra reservada `throw` la cual funciona similar que el `return` en las funciones.
 
-Así como el `return`, podemos lanzar cualquier cosa, por lo que podríamos usar `throw` para lanzar un número, o un string... Aunque claro, no es la mejor idea, no es recomendable por ser considerado una mala práctica dentro de JavaScript. Dicho de otra forma, el hecho de que podamos lanzar cualquier cosa _no significa_ que debamos hacerlo.
+Así como el `return`, podemos lanzar cualquier cosa, por lo que podríamos usar `throw` para lanzar un número, o un string... Aunque claro, no es la mejor idea; no es recomendable por ser considerado una mala práctica dentro de JavaScript. Dicho de otra forma, el hecho de que podamos lanzar cualquier cosa _no significa_ que debamos hacerlo.
 
 Una vez que la ejecución de nuestro código llega al `throw`, la ejecución se detendrá, por lo que el flujo de nuestro programa se verá afectado. Se rompe.
 
-Un pequeño ejemplo pr´qactico podría ser que estemos fabricando juguetes. Durante la producción de estos juguetes, pueden haber algunos defectuosos, que serían nuestras excepciones.
+Un pequeño ejemplo práctico podría ser que estemos fabricando juguetes. Durante la producción de estos juguetes, pueden haber algunos defectuosos, que serían nuestras excepciones.
 
 ```js
 const JUGUETES_A_FABRICAR = 10;
@@ -30,9 +37,11 @@ Como podemos ver en el ejemplo, el programa irá produciendo 10 juguetes en tota
 
 También podemos apreciar que no estamos lanzando un string o número, sino que estamos lanzando un error haciendo uso de la clase `Error`.
 
+[Volver arriba](#índice)
+
 ---
 
-## Bloque Try Catch
+## Try-Catch
 
 El bloque try catch es sencillo.
 
@@ -91,3 +100,5 @@ console.log(`Juguetes fabricados: ${JUGUETES_A_FABRICAR}:`);
 console.log(`- Juguetes correctos: ${juguetesCorrectos}`);
 console.log(`- Juguetes defectuosos: ${juguetesDefectuosos}`);
 ```
+
+[Volver arriba](#índice)

@@ -174,6 +174,7 @@ console.log(typeof NaN);
 
 console.log(typeof [])
 // Prints "object"
+// Told ya :P
 
 console.log(typeof {})
 // Prints "object"

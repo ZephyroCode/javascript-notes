@@ -47,7 +47,7 @@ class Operator {
 
 	// Methods
 	greet() {
-		return `Hello. I'm ${this.names} ${this.surnames}, DNI: ${this.dni}, gender ${this.gender}. My phone number is: ${this.phone}, my email is: ${this.mail} and my charge is ${Operator.MAIN_CHARGE}.`;
+		return `Hello. I'm ${this.names} ${this.surnames}.`;
 	}
 }
 ```

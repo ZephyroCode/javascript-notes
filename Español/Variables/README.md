@@ -1,29 +1,36 @@
 # Variables
 
-## Basics
+## Índice
 
-Variables in JavaScript are kind of special compared to other languages like C++ or Java. First thing is that there aren't types. Every variable has a dynamic data type. This means that you can create a variable with a number, and change it to a string later on.
+* [Conceptos Básicos](#básicos)
+* [Constantes](#constantes)
 
-There are 2 ways to declare a variable in JavaScript:
+---
 
-* var
-* let
+## Básicos
 
-Using the `var` keyword is not recommended nowadays because of the issues it can cause. So therefore, **do NOT use var**.
+Las variables en JavaScript son un poco especiales comparadas con otros lenguajes como C++ o Java. Lo primero sería que no tienen tipos; cada variable tiene un tipo de dato dinámico. Esto significa que puedes crear una variable con un número, y más tarde cambiarlo a un string, un boolean, o un objeto según se necesite.
 
-Using the `let` keyword is basically the way to go when you're declaring a new variable in JavaScript because of the scope.
+Hay 2 formas de declarar una variable en JavaScript:
 
-Within the same context, you can't declare variable or constants with the same name.
+* `var`
+* `let`
 
-Your variable names can start with:
+Usar la palabra reservada `var` no se recomienda hoy día dado que causa algunos problemas con el ámbito de las variables. Por lo tanto, **NO usar var**.
+
+Usar `let` es básicamente el modo de declarar variables actualmente debido principalmente al ámbito.
+
+Tener en cuenta que dentro del mismo contexto/ámbito, no podemos declarar variables con el mismo nombre.
+
+Los nombres de las variables pueden comenzar con:
 
 * `$`
 * `_`
-* Any letter.
+* Cualquier letra.
 
-You can't start a variable/constant/function/class with a number, so `1name` just doesn't work.
+No se puede comenzar el nombre de una variable/constante/clase/función con un número, por lo que `1producto` simplemente no funciona.
 
-We also have several keywords that can never be used as IDs:
+Además, tenemos varias palabras reservadas que no pueden ser usadas como identificadores/nombres:
 
 - **A**: `abstract`.
 
@@ -57,57 +64,57 @@ We also have several keywords that can never be used as IDs:
 
 - **W**: `while`, `with`.
 
----
-
 ```js
-let name = "Elizabeth";
+let nombre = "Elizabeth";
 ```
 
-Here you can see how a variable is declared.
+Aquí puede verse como una variable es declarada.
 
-1. Keyword.
-2. Variable name.
-3. Assignment operator.
-4. Value.
+1. Palabra reservada.
+2. Identificador de la variable.
+3. Operador de asignación.
+4. Valor.
 
-Also, something you should note is that variables are mostly written in _camelCase_. first character in lowercase, and if you have more than one word in the variable name, you write the first character in uppercase.
+También, algo que se ha de recordar es que las variables por convención se escriben en _camelCase_. Primera letra en minúsculas, y si tienes más de una palabra en el identificador, la primera letra de la segunda palabra en adelante, en mayúsculas.
 
-You could use *snake_case* too...
+También podría usarse *snake_case*...
 
 ```js
-let besto_king = "Jon Snow";
+let el_rey_del_norte = "Jon Snow";
 ```
 
----
+Ahora, algunos de los más nuevos podrían preguntarse _"¿Por qué necesito declarar variables?"_
 
-Now, some of the new ones may be asking _"Why do I need to declare variables?"_ 
+Bueno, es simple: porque necesitas usar sus valores durante la ejecución del programa.
 
-Well, that's easy. Because you need to use their values during the execution of your program/script.
-
-Let's make a quick example:
+Un ejemplo rápido:
 
 ```js
-let price =  37;
-let amount = 3;
+let precio =  37;
+let cantidad = 3;
 
-let total = price * amount;
+let total = precio * cantidad;
 console.log(total);
 ```
 
-Yes, it's a super basic example, but you get the idea.
+Sí, muy básico el ejemplo, pero con eso se hacen a la idea.
+
+[Volver arriba](#índice)
 
 ---
 
-## Constants
+## Constantes
 
-Besides the variables, we have constants. A constant, as the name says, is a variable that will **never** change it's value.
+Además de las variables, tenemos las constantes. Como el nombre indica, es una variable que **nunca** va a cambiar su valor.
 
-Another thing is that constant names are written in uppercase and you separate each word with an underscore.
+Otro detalle es que los identificadores de las constantes se suelen escribir en mayúsculas separando las palabras con guión bajo.
 
-And of course, the keyword you'll use is `const`.
+Por supuesto, la palabra reservada a utilizar es `const`.
 
-Example:
+Ejemplo:
 
 ```js
 const ZEPHYRO_BLOG = "https://zephyrocode.github.io";
 ```
+
+[Volver arriba](#índice)
